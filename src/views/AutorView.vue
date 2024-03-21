@@ -8,6 +8,7 @@ const autores = ref([]);
 const autor = reactive({ ...defaultAutor });
 
 onMounted(async () => {
+
     autores.value = await autoresApi.buscarTodosOsAutores();
 });
 
@@ -55,6 +56,7 @@ async function excluir(id) {
             <button @click="excluir(autor.id)">X</button>
         </li>
     </ul>
+
 </template>
 
 <style></style>
